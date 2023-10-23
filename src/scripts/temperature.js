@@ -191,7 +191,12 @@ Converter.prototype.submit = function(e) {
       break;
     }
   //The more decimals in the input string, the decimals we'll put in our answer.
-  output = Number(output.toFixed(Math.max(2,input.toString().length-input.toString().indexOf('.')-1)));
+  let index = input.toString().indexOf('.');
+  if (index>-1) {
+    output = Number(output.toFixed(Math.max(2,input.toString().length-index-1)));
+  } else {
+    output = Number(output.toFixed(2));
+  }
 
   //I don't think I can split this to multiple lines sadly
   this.output.innerHTML = `${input} ${UNITS.NAMES2[this.selectedModes[0]]} is equal to ${output} ${UNITS.NAMES2[this.selectedModes[1]]}.`;
