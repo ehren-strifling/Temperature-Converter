@@ -1,0 +1,123 @@
+@charset "utf-8";
+
+:Root {
+  --app-light-mode: #F2F3F5;
+  --app-dark-mode: #303036;
+
+  --app-light-mode-text: #000000;
+  --app-dark-mode-text: #F2F3F5;
+
+  --app-light-mode-border: #606060;
+  --app-dark-mode-border: #606060;
+}
+
+body {
+  background-color: var(--app-light-mode);
+  color: var(--app-light-mode-text);
+  transition: all 0.25s ease-in-out;
+}
+body.dark-mode {
+  background-color: var(--app-dark-mode);
+  color: var(--app-dark-mode-text);
+}
+
+.box { /* An awkward width value, which is not unusual for forms. 
+  I'm sure someone could still make something nice using the extra space in a real website. */
+  width:320px;
+}
+
+h2 {
+  margin-top:40px;
+}
+form.converter input[type="text"] {
+  margin-top:10px;
+  border: 1px solid var(--app-light-mode-border);
+  width: 210px;
+  height:40px;
+  padding-left:4px;
+  font-size:20px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-right-width: 0;
+  
+  background-color: inherit;
+  color: inherit;
+  transition: inherit;
+}
+.dark-mode form.converter input[type="text"] {
+  border-color: var(--app-dark-mode-border);
+  background-color: var(--app-dark-mode);
+}
+form.converter button {
+  font-size:18px;
+  width:100px;
+  height:40px;
+  line-height:40px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color:#808080;
+  color: #FFFFFF;
+}
+form.converter button:hover {
+  cursor: pointer;
+}
+
+form.converter .radio {
+  font-size: 0;
+}
+form.converter .radio h3 {
+  font-size: 20px;
+  margin-top:10px;
+}
+form.converter .radio label {
+  font-size: 16px;
+
+  margin-left: 8px;
+  margin-right:24px;
+}
+
+form.converter .output {
+  margin-top:15px;
+  border-radius:8px;
+  padding-left:4px;
+  padding-right:4px;  
+  border: 1px solid var(--app-light-mode-border);
+  font-size: 16px;
+  width: 320px;
+  height: 96px;
+}
+.dark-mode form.converter .output {
+  border-color: #00000000;
+  background-color: var(--app-dark-mode-border);
+}
+
+/* Dark mode button*/
+.toggle-dark-mode {
+  font-size:18px;
+  position:absolute;
+  right:10px;
+  bottom:10px;
+  width:200px;
+  height:120px;
+  line-height:120px;
+  border-radius: 45px;
+  background-color: var(--app-dark-mode);
+  color: #FFFFFF;
+
+  transition: all 0.25s ease-in-out;
+}
+.toggle-dark-mode:hover {
+  cursor: pointer;
+}
+body.dark-mode .toggle-dark-mode {
+  background-color: var(--app-light-mode);
+  color: var(--app-light-mode-text);
+}
+
+/* Used by the script to indicate if the output is invalid or not set*/
+form.converter .output.placeholder {
+  color: #808080;
+}
+form.converter .output.invalid {
+  color: #FF0000;
+}

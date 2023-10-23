@@ -1,1 +1,77 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+    
 
+    <!-- <meta name="viewport" content="width=device-width, initial-scale"> -->
+    <meta name="author" content="Ehren Strifling">
+    <meta name="description" content="temperature converter for Celsius, Farhenheit and Kelvin">
+    <!--Use commas and a space to separate keywords-->
+    <meta name="keywords" content="Ehren Strifling"> 
+
+    <!--Style sheets-->
+    <!--<link rel="stylesheet" href="./styles.css">-->
+    
+    <title>Temperature Converter</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./src/css/base-styles.css">
+    <link rel="stylesheet" href="./src/css/index.css">
+
+    <script src="./src/scripts/temperature.js" defer></script>
+    <script src="./src/scripts/dark-mode.js" defer></script>
+
+    </head>
+    <body>
+      <!--Pretty much a complete copy from html assignment 3-->
+      <header>
+        <div class="container flex">
+          <h1>Temperature Converter</h1>
+          <nav>
+            <ul>
+              <li><a href="https://github.com/ehren-strifling/Temperature-Converter">Github</a></li>
+              <li><a href="https://github.com/ehren-strifling">My Profile</a></li>
+              <li><a href="https://github.com/ehren-strifling?tab=repositories">My Projects</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <section class="flex center container">
+        <div class="box">
+          <h2>Temperature Converter</h2>
+          <form class="converter">
+            <input type="text" name="temperature" placeholder="Temperature"><button type="button">Convert</button>
+
+            <div class="radio from">
+              <h3>Convert from:</h3>
+              <input type="radio" name="from" value="Fahrenheit">
+              <label>Farhenheit</label>
+              <input type="radio" name="from" value="Celsius">
+              <label>Celsius</label>
+              <input type="radio" name="from" value="Kelvin">
+              <label>Kelvin</label>
+            </div>
+            <div class="radio to">
+              <h3>Convert to:</h3>
+              <input type="radio" name="to" value="Fahrenheit">
+              <label>Farhenheit</label>
+              <input type="radio" name="to" value="Celsius">
+              <label>Celsius</label>
+              <input type="radio" name="to" value="Kelvin">
+              <label>Kelvin</label>
+            </div>
+
+            <p class="output placeholder">
+              Your output will display here...
+            </p>
+          </form>
+        </div>
+      </section>
+      <button type="button" class="toggle-dark-mode">Enable dark mode</button>
+    </body>
+</html>
